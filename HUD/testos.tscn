@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdbm4lmy56tu0"]
+
+[ext_resource type="Script" path="res://scripts/HUD.gd" id="1_h7uti"]
+[ext_resource type="PackedScene" uid="uid://bmhwg3noojkm3" path="res://scenes/world.tscn" id="2_wol71"]
+
+[node name="Testos" type="Node2D"]
+script = ExtResource("1_h7uti")
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("res://scenes/player.tscn")
+spawn_path = NodePath("..")
+
+[node name="MainMenu" type="Control" parent="."]
+layout_mode = 3
+anchor_top = -0.248
+anchor_right = 1.391
+offset_left = 87.0
+offset_top = 69.0
+offset_right = 1042.0
+offset_bottom = 617.0
+
+[node name="InputIP" type="TextEdit" parent="MainMenu"]
+layout_mode = 2
+anchor_right = 0.032
+anchor_bottom = 0.03
+offset_left = 469.0
+offset_top = 296.0
+offset_right = 773.104
+offset_bottom = 315.19
+placeholder_text = "192.168.0.1"
+autowrap_mode = 1
+
+[node name="JoinButton" type="Button" parent="MainMenu"]
+layout_mode = 2
+offset_left = 574.0
+offset_top = 468.0
+offset_right = 686.0
+offset_bottom = 499.0
+text = "Join"
+
+[node name="CreateServerButton" type="Button" parent="MainMenu"]
+layout_mode = 2
+offset_left = 551.0
+offset_top = 165.0
+offset_right = 663.0
+offset_bottom = 196.0
+text = "Server"
+
+[node name="World" parent="." instance=ExtResource("2_wol71")]
