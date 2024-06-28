@@ -214,7 +214,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pgq4l"]
 size = Vector2(8, 12)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+collision_layer = 3
 floor_constant_speed = true
 floor_snap_length = 2.0
 script = ExtResource("1_n2xop")
@@ -237,5 +238,9 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_pgq4l")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-1, -71)
+zoom = Vector2(0.6, 0.6)
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

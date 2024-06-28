@@ -150,7 +150,7 @@ script = ExtResource("1_pqe0g")
 sprite_frames = SubResource("SpriteFrames_h8p60")
 animation = &"on"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="spike_collision" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_i0dds")
 
