@@ -229,6 +229,8 @@ shape = SubResource("RectangleShape2D_psdhv")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4rhpc")
 animation = &"idle"
+frame = 3
+frame_progress = 0.0829157
 
 [node name="Hitbox" type="Area2D" parent="."]
 collision_layer = 0
