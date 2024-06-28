@@ -11,7 +11,7 @@ extends CharacterBody2D
 @export_category("Jump Parameters")
 @export var jump_force : int = -200
 @export var jump_gravity : int = 400
-@export var jump_hold_time : float = 1
+@export var jump_hold_time : float = 0.5
 @export var gravity : int = 600
 var jump_timer : float = 0
 var is_alive : bool = true
@@ -31,12 +31,14 @@ func _physics_process(delta):
 
 	move_and_slide()
 
+# Sets acceleration and deceleration with move_toward().
 func handle_movement(direction, delta):
 	if direction:
 		velocity.x = move_toward(velocity.x, move_speed * direction, acceleration * delta)
 	else:
 		velocity.x = move_toward(velocity.x, 0, deceleration * delta)
 
+# Used for handle_movement(), nullify joypad's sensibility.
 func get_horizontal_input() -> int:
 	var left = Input.is_action_pressed("Left")
 	var right = Input.is_action_pressed("Right")
@@ -47,12 +49,14 @@ func get_horizontal_input() -> int:
 	else:
 		return 0
 
+# Sets gravity according to jump state.
 func handle_gravity(delta):
 	if velocity.y < 0:
 		velocity.y += gravity * delta
 	else:
 		velocity.y += jump_gravity * delta
 
+# Sets jump power and timer, depending how long the player press the key.
 func handle_jump(delta):
 	if Input.is_action_just_pressed("Jump") && is_on_floor():
 		velocity.y = jump_force
@@ -63,6 +67,7 @@ func handle_jump(delta):
 	else:
 		velocity.y += jump_gravity * delta
 
+# Sets most animations.
 func update_animation(direction):
 	if direction:
 		animated_sprite_2d.flip_h = direction < 0
@@ -82,6 +87,7 @@ func update_animation(direction):
 			if animated_sprite_2d.animation != "fall":
 				animated_sprite_2d.play("fall")
 
+# Death & Respawn
 func _on_hitbox_area_entered(area):
 	is_alive = false
 	velocity.x = 0

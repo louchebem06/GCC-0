@@ -445,10 +445,6 @@ layer_0/tile_data = PackedInt32Array(655360, 393216, 2, 655361, 131072, 1, 65536
 
 [node name="Player" parent="." instance=ExtResource("2_ftr8q")]
 position = Vector2(33, 149)
-jump_force = -615
 
 [node name="Spike" parent="." instance=ExtResource("3_cst7h")]
 position = Vector2(105, 76)
-
-[node name="Player2" parent="." instance=ExtResource("2_ftr8q")]
-position = Vector2(78, 125)
