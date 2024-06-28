@@ -44,6 +44,13 @@ polygon = PackedVector2Array(-73, -39, -74, 38, 71, 39, 73, -40)
 [node name="InteractionArea" parent="AnimatableBody2D" instance=ExtResource("1_an04y")]
 position = Vector2(594, 727)
 
+[node name="Label" type="Label" parent="AnimatableBody2D/InteractionArea"]
+offset_left = -113.0
+offset_top = -82.0
+offset_right = -47.0
+offset_bottom = -59.0
+text = "Coucouc"
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D/InteractionArea"]
 shape = SubResource("CircleShape2D_uixip")
 
