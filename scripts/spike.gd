@@ -4,7 +4,7 @@ extends Area2D
 @onready var spike_collision = $spike_collision
 
 
-var is_on : bool = false
+@export var is_on : bool = false
 
 
 func _ready():

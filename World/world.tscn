@@ -38,3 +38,4 @@ position = Vector2(296, 752)
 position = Vector2(480, 704)
 
 [node name="spike_button" parent="." instance=ExtResource("4_purch")]
+position = Vector2(-224, -632)
