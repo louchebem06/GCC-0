@@ -19,27 +19,19 @@ var is_alive : bool = true
 var init_pos : Vector2
 
 func _ready():
-	#await get_tree()
-	#if get_tree().has_network_peer():
-		#if is_network_master():
-			#camera.make_current()
-	#init_pos = position
 	if name == "1":
-		position = Vector2(100, 100)
+		position = Vector2(32, 32)
 	else:
-		position = Vector2(200, 520)
+		position = Vector2(32, 320)
 	pass
 
 func _physics_process(delta):
 	if is_multiplayer_authority():
-		#velocity = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down") * 100
-		#if is_alive:
-			var direction = get_horizontal_input()
-			handle_movement(direction, delta)
-			handle_gravity(delta)
-			handle_jump(delta)
-			update_animation(direction)
-
+		var direction = get_horizontal_input()
+		handle_movement(direction, delta)
+		handle_jump(delta)
+		update_animation(direction)
+	handle_gravity(delta)
 	move_and_slide()
 
 func handle_movement(direction, delta):
@@ -68,7 +60,6 @@ func handle_jump(delta):
 	if Input.is_action_just_pressed("Jump") && is_on_floor():
 		velocity.y = jump_force
 		jump_timer = 0
-	
 	if Input.is_action_pressed("Jump") && jump_timer < jump_hold_time:
 		jump_timer += delta
 	else:
@@ -77,7 +68,6 @@ func handle_jump(delta):
 func update_animation(direction):
 	if direction:
 		animated_sprite_2d.flip_h = direction < 0
-	
 	if is_on_floor():
 		if direction:
 			if animated_sprite_2d.animation != "run":
@@ -97,10 +87,6 @@ func _on_hitbox_area_entered(_area):
 	is_alive = false
 	velocity.x = 0
 	animated_sprite_2d.play("death")
-	await get_tree().create_timer(0.9).timeout
-	position = init_pos
-	is_alive = true
-	animated_sprite_2d.play("idle")
 
 func _enter_tree():
 	set_multiplayer_authority(name.to_int())

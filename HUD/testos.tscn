@@ -23,27 +23,27 @@ offset_bottom = 617.0
 layout_mode = 2
 anchor_right = 0.032
 anchor_bottom = 0.03
-offset_left = 469.0
-offset_top = 296.0
-offset_right = 773.104
-offset_bottom = 315.19
+offset_left = 65.0
+offset_top = 43.0
+offset_right = 369.104
+offset_bottom = 62.19
 placeholder_text = "192.168.0.1"
 autowrap_mode = 1
 
 [node name="JoinButton" type="Button" parent="MainMenu"]
 layout_mode = 2
-offset_left = 574.0
-offset_top = 468.0
-offset_right = 686.0
-offset_bottom = 499.0
+offset_left = 177.0
+offset_top = 187.0
+offset_right = 289.0
+offset_bottom = 218.0
 text = "Join"
 
 [node name="CreateServerButton" type="Button" parent="MainMenu"]
 layout_mode = 2
-offset_left = 551.0
-offset_top = 165.0
-offset_right = 663.0
-offset_bottom = 196.0
+offset_left = 177.0
+offset_top = -37.0
+offset_right = 289.0
+offset_bottom = -6.0
 text = "Server"
 
 [node name="World" parent="." instance=ExtResource("2_wol71")]
