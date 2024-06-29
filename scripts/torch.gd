@@ -1,6 +1,6 @@
-extends RigidBody2D
+extends Area2D
 
-@onready var player = $"../Player"
+@onready var player = null;
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var collision_shape_2d = $CollisionShape2D
 
@@ -17,18 +17,21 @@ var falling = 600.0
 func _ready():
 	animated_sprite_2d.play("burning")
 	connect("body_entered", Callable(self, "_on_body_entered"))
+	connect("body_exited", Callable(self, "_on_body_exited"))
 
 func _process(delta):
 	if is_held:
 		hover_offset += hover_speed * delta
 		var hover = sin(hover_offset) * hover_amplitude
-		position = player.position + Vector2(0, -30 + hover)
+		if player:
+			position = player.position + Vector2(0, -30 + hover)
 		
 		if Input.is_action_just_pressed("Drop"):
 			is_held = false
 			is_thrown = true
-			$CollisionShape2D.set_deferred("disabled", false)
+			collision_shape_2d.disabled = false
 			var direction = player.facing
+			player = null
 			throw_velocity = Vector2(direction * throw_speed, -throw_speed / 2)
 
 	if is_thrown:
@@ -36,7 +39,11 @@ func _process(delta):
 		position += throw_velocity * delta
 
 func _on_body_entered(body):
-	print("merde")
-	if body.name == "Player" && !is_thrown:
+	if !is_thrown:
+		player = body
 		is_held = true
 		collision_shape_2d.disabled = true
+
+func _on_body_exited(body):
+	if is_thrown:
+		player = null
