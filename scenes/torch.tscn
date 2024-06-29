@@ -1,0 +1,83 @@
+[gd_scene load_steps=13 format=3 uid="uid://cuicw0qrp1mr6"]
+
+[ext_resource type="Script" path="res://scripts/torch.gd" id="1_5glt0"]
+[ext_resource type="Texture2D" uid="uid://bso8jn2daolxo" path="res://assets/player/Torch.png" id="1_vifby"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1mth4"]
+atlas = ExtResource("1_vifby")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8mj8o"]
+atlas = ExtResource("1_vifby")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c730b"]
+atlas = ExtResource("1_vifby")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_twgjh"]
+atlas = ExtResource("1_vifby")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_74dno"]
+atlas = ExtResource("1_vifby")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u15bw"]
+atlas = ExtResource("1_vifby")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j7tp0"]
+atlas = ExtResource("1_vifby")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6nbq3"]
+atlas = ExtResource("1_vifby")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h63e2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1mth4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8mj8o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c730b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_twgjh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_74dno")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u15bw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j7tp0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6nbq3")
+}],
+"loop": true,
+"name": &"burn",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2y6g4"]
+size = Vector2(6, 13)
+
+[node name="Torch" type="Area2D"]
+script = ExtResource("1_5glt0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_h63e2")
+animation = &"burn"
+frame_progress = 0.824461
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8.5)
+shape = SubResource("RectangleShape2D_2y6g4")
