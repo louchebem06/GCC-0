@@ -1,0 +1,373 @@
+[gd_scene load_steps=91 format=3 uid="uid://bon8pv5gv7uj8"]
+
+[ext_resource type="Texture2D" uid="uid://crqckernpcgfy" path="res://assets/jul/om-marseille0000.png" id="1_kyof7"]
+[ext_resource type="Texture2D" uid="uid://dshk3lq0jfqnn" path="res://assets/jul/om-marseille0001.png" id="2_0yq0o"]
+[ext_resource type="Texture2D" uid="uid://bx24xnk5nallp" path="res://assets/jul/om-marseille0002.png" id="3_fuxmh"]
+[ext_resource type="Texture2D" uid="uid://dnbquvqgr1b3j" path="res://assets/jul/om-marseille0003.png" id="4_bt3of"]
+[ext_resource type="Texture2D" uid="uid://drle0u31c8lil" path="res://assets/jul/om-marseille0004.png" id="5_48f4x"]
+[ext_resource type="Texture2D" uid="uid://dp8xj2uuayu1a" path="res://assets/jul/om-marseille0005.png" id="6_ayjc4"]
+[ext_resource type="Texture2D" uid="uid://c2u2w421d45jj" path="res://assets/jul/om-marseille0006.png" id="7_a16q0"]
+[ext_resource type="Texture2D" uid="uid://dujnv8os502te" path="res://assets/jul/om-marseille0007.png" id="8_jfvt3"]
+[ext_resource type="Texture2D" uid="uid://ce8m4xvxjqpsk" path="res://assets/jul/om-marseille0008.png" id="9_2hckh"]
+[ext_resource type="Texture2D" uid="uid://b0175lg7ki2hb" path="res://assets/jul/om-marseille0009.png" id="10_x85ca"]
+[ext_resource type="Texture2D" uid="uid://ci2qvqp6giqa8" path="res://assets/jul/om-marseille0010.png" id="11_b7fup"]
+[ext_resource type="Texture2D" uid="uid://c5jrrrfbuhhbe" path="res://assets/jul/om-marseille0011.png" id="12_b4d0q"]
+[ext_resource type="Texture2D" uid="uid://dqvhv2as5jesa" path="res://assets/jul/om-marseille0012.png" id="13_pq1wm"]
+[ext_resource type="Texture2D" uid="uid://clb0bkqgok24v" path="res://assets/jul/om-marseille0013.png" id="14_modle"]
+[ext_resource type="Texture2D" uid="uid://bsbaf2louw51h" path="res://assets/jul/om-marseille0014.png" id="15_scbep"]
+[ext_resource type="Texture2D" uid="uid://cr36ukitwmpeo" path="res://assets/jul/om-marseille0015.png" id="16_3reeb"]
+[ext_resource type="Texture2D" uid="uid://b6xcny6osf3wp" path="res://assets/jul/om-marseille0016.png" id="17_rys23"]
+[ext_resource type="Texture2D" uid="uid://c500h02oroqsc" path="res://assets/jul/om-marseille0017.png" id="18_gw40p"]
+[ext_resource type="Texture2D" uid="uid://b8gw1i4gn7iyp" path="res://assets/jul/om-marseille0018.png" id="19_81itg"]
+[ext_resource type="Texture2D" uid="uid://dij8rk8u23ypy" path="res://assets/jul/om-marseille0019.png" id="20_60v2h"]
+[ext_resource type="Texture2D" uid="uid://kolq3t5hdodl" path="res://assets/jul/om-marseille0020.png" id="21_ptx1b"]
+[ext_resource type="Texture2D" uid="uid://cgfg8g2877pra" path="res://assets/jul/om-marseille0021.png" id="22_do821"]
+[ext_resource type="Texture2D" uid="uid://daxvxw6cu2ij8" path="res://assets/jul/om-marseille0022.png" id="23_qu21j"]
+[ext_resource type="Texture2D" uid="uid://boskgokn2uog8" path="res://assets/jul/om-marseille0023.png" id="24_sdgha"]
+[ext_resource type="Texture2D" uid="uid://df7nkhtecmf3f" path="res://assets/jul/om-marseille0024.png" id="25_8q353"]
+[ext_resource type="Texture2D" uid="uid://bwdmp32p0xu6v" path="res://assets/jul/om-marseille0025.png" id="26_rxubc"]
+[ext_resource type="Texture2D" uid="uid://b105p6by0a16y" path="res://assets/jul/om-marseille0026.png" id="27_j7ikw"]
+[ext_resource type="Texture2D" uid="uid://yafgfuwmmo7l" path="res://assets/jul/om-marseille0027.png" id="28_jwxlr"]
+[ext_resource type="Texture2D" uid="uid://ckbhwxtct67i0" path="res://assets/jul/om-marseille0028.png" id="29_ayn36"]
+[ext_resource type="Texture2D" uid="uid://yh0a2j7pjej8" path="res://assets/jul/om-marseille0029.png" id="30_fkg77"]
+[ext_resource type="Texture2D" uid="uid://sgpmdbs40ts" path="res://assets/jul/om-marseille0030.png" id="31_xsf5y"]
+[ext_resource type="Texture2D" uid="uid://60bufvn2ak6k" path="res://assets/jul/om-marseille0031.png" id="32_lh7h8"]
+[ext_resource type="Texture2D" uid="uid://dyfvkfv3k0j4i" path="res://assets/jul/om-marseille0032.png" id="33_0f6n8"]
+[ext_resource type="Texture2D" uid="uid://dogatbtuog6ad" path="res://assets/jul/om-marseille0033.png" id="34_sgdwr"]
+[ext_resource type="Texture2D" uid="uid://b8u4f836vb24a" path="res://assets/jul/om-marseille0034.png" id="35_bvk30"]
+[ext_resource type="Texture2D" uid="uid://ch1xh8ta7tagq" path="res://assets/jul/om-marseille0035.png" id="36_di0tw"]
+[ext_resource type="Texture2D" uid="uid://cqut5idbsxikd" path="res://assets/jul/om-marseille0036.png" id="37_3vclv"]
+[ext_resource type="Texture2D" uid="uid://cetmip8ce8j2" path="res://assets/jul/om-marseille0037.png" id="38_h2ge4"]
+[ext_resource type="Texture2D" uid="uid://ctsdcheu035dh" path="res://assets/jul/om-marseille0038.png" id="39_lhsav"]
+[ext_resource type="Texture2D" uid="uid://by8apghc5vcft" path="res://assets/jul/om-marseille0039.png" id="40_mal8f"]
+[ext_resource type="Texture2D" uid="uid://boq382lq3x4bk" path="res://assets/jul/om-marseille0040.png" id="41_qm7qy"]
+[ext_resource type="Texture2D" uid="uid://xorm01yvtpwy" path="res://assets/jul/om-marseille0041.png" id="42_rqccy"]
+[ext_resource type="Texture2D" uid="uid://d03kypmqscg63" path="res://assets/jul/om-marseille0042.png" id="43_v0fwd"]
+[ext_resource type="Texture2D" uid="uid://ccv6jf0qkaj41" path="res://assets/jul/om-marseille0043.png" id="44_csys5"]
+[ext_resource type="Texture2D" uid="uid://bn3fnsc24x58x" path="res://assets/jul/om-marseille0044.png" id="45_onnof"]
+[ext_resource type="Texture2D" uid="uid://ccv3cpch54508" path="res://assets/jul/om-marseille0045.png" id="46_y0b3c"]
+[ext_resource type="Texture2D" uid="uid://dbuasuqwgiqtw" path="res://assets/jul/om-marseille0046.png" id="47_2fogp"]
+[ext_resource type="Texture2D" uid="uid://gq2no1rm8mnf" path="res://assets/jul/om-marseille0047.png" id="48_tbdel"]
+[ext_resource type="Texture2D" uid="uid://mmiji7et720w" path="res://assets/jul/om-marseille0048.png" id="49_7btpu"]
+[ext_resource type="Texture2D" uid="uid://dmv77vek8fvx" path="res://assets/jul/om-marseille0049.png" id="50_iwqgv"]
+[ext_resource type="Texture2D" uid="uid://0uupr1albqnb" path="res://assets/jul/om-marseille0050.png" id="51_remq6"]
+[ext_resource type="Texture2D" uid="uid://bckvxbntpalry" path="res://assets/jul/om-marseille0051.png" id="52_l1dux"]
+[ext_resource type="Texture2D" uid="uid://dx8y735hlx8iv" path="res://assets/jul/om-marseille0052.png" id="53_r12xf"]
+[ext_resource type="Texture2D" uid="uid://bwaesbqyko0es" path="res://assets/jul/om-marseille0053.png" id="54_lecl2"]
+[ext_resource type="Texture2D" uid="uid://ch6g7uxnxj1dc" path="res://assets/jul/om-marseille0054.png" id="55_lxpac"]
+[ext_resource type="Texture2D" uid="uid://c1omqgdky1yd4" path="res://assets/jul/om-marseille0055.png" id="56_2aca8"]
+[ext_resource type="Texture2D" uid="uid://bc0xgqnrxdxfu" path="res://assets/jul/om-marseille0056.png" id="57_ahs4h"]
+[ext_resource type="Texture2D" uid="uid://rptemcdlsons" path="res://assets/jul/om-marseille0057.png" id="58_5gcri"]
+[ext_resource type="Texture2D" uid="uid://btjx33im0w3x8" path="res://assets/jul/om-marseille0058.png" id="59_i40q8"]
+[ext_resource type="Texture2D" uid="uid://bkyfqfaxqrb77" path="res://assets/jul/om-marseille0059.png" id="60_jaw73"]
+[ext_resource type="Texture2D" uid="uid://elvlfj6qi1sd" path="res://assets/jul/om-marseille0060.png" id="61_k81or"]
+[ext_resource type="Texture2D" uid="uid://bm1i8lqb0egci" path="res://assets/jul/om-marseille0061.png" id="62_qbkk6"]
+[ext_resource type="Texture2D" uid="uid://clcgosuosj8pb" path="res://assets/jul/om-marseille0062.png" id="63_lni8c"]
+[ext_resource type="Texture2D" uid="uid://cl0ydcryeiwcs" path="res://assets/jul/om-marseille0063.png" id="64_yue54"]
+[ext_resource type="Texture2D" uid="uid://drvlcswmguywe" path="res://assets/jul/om-marseille0064.png" id="65_v8vcr"]
+[ext_resource type="Texture2D" uid="uid://b4c35dvp7yhl3" path="res://assets/jul/om-marseille0065.png" id="66_k0com"]
+[ext_resource type="Texture2D" uid="uid://4un6bvywsfmd" path="res://assets/jul/om-marseille0066.png" id="67_elf6a"]
+[ext_resource type="Texture2D" uid="uid://b5cct720fluky" path="res://assets/jul/om-marseille0067.png" id="68_kmd2k"]
+[ext_resource type="Texture2D" uid="uid://f1cu0p24d0gh" path="res://assets/jul/om-marseille0068.png" id="69_og17r"]
+[ext_resource type="Texture2D" uid="uid://b3q1v3sbxqtf" path="res://assets/jul/om-marseille0069.png" id="70_ainvw"]
+[ext_resource type="Texture2D" uid="uid://06ridla0vp52" path="res://assets/jul/om-marseille0070.png" id="71_1ngrm"]
+[ext_resource type="Texture2D" uid="uid://cdd8nv7otrbbi" path="res://assets/jul/om-marseille0071.png" id="72_1x15j"]
+[ext_resource type="Texture2D" uid="uid://d30s3noko1auk" path="res://assets/jul/om-marseille0072.png" id="73_biugr"]
+[ext_resource type="Texture2D" uid="uid://cnrs1ilaa5cwg" path="res://assets/jul/om-marseille0073.png" id="74_wx5g3"]
+[ext_resource type="Texture2D" uid="uid://bget82hdfe2jp" path="res://assets/jul/om-marseille0074.png" id="75_ba5cv"]
+[ext_resource type="Texture2D" uid="uid://um2f5nhm62i4" path="res://assets/jul/om-marseille0075.png" id="76_rmm6b"]
+[ext_resource type="Texture2D" uid="uid://cs6qfohaqlcgn" path="res://assets/jul/om-marseille0076.png" id="77_w6c5s"]
+[ext_resource type="Texture2D" uid="uid://yg8op08gifp7" path="res://assets/jul/om-marseille0077.png" id="78_qjvn2"]
+[ext_resource type="Texture2D" uid="uid://b0jnu2u7d0nm7" path="res://assets/jul/om-marseille0078.png" id="79_jxc7y"]
+[ext_resource type="Texture2D" uid="uid://iss77of6jqlv" path="res://assets/jul/om-marseille0079.png" id="80_gewqv"]
+[ext_resource type="Texture2D" uid="uid://bi7oq2aams68i" path="res://assets/jul/om-marseille0080.png" id="81_h4cce"]
+[ext_resource type="Texture2D" uid="uid://dhsxmwcdf7lvf" path="res://assets/jul/om-marseille0081.png" id="82_rpydv"]
+[ext_resource type="Texture2D" uid="uid://d0stwr4mvivvh" path="res://assets/jul/om-marseille0082.png" id="83_gygir"]
+[ext_resource type="Texture2D" uid="uid://dpj3klxsa4aqa" path="res://assets/jul/om-marseille0083.png" id="84_xm4i8"]
+[ext_resource type="Texture2D" uid="uid://1skan8diebkk" path="res://assets/jul/om-marseille0084.png" id="85_fd1s1"]
+[ext_resource type="Texture2D" uid="uid://dcp77egobf1dv" path="res://assets/jul/om-marseille0085.png" id="86_sxjxq"]
+[ext_resource type="Texture2D" uid="uid://bsuln1t6otv1v" path="res://assets/jul/om-marseille0086.png" id="87_5vjag"]
+[ext_resource type="Texture2D" uid="uid://ckxjge63hdii8" path="res://assets/jul/om-marseille0087.png" id="88_thnxo"]
+[ext_resource type="Texture2D" uid="uid://b84n3vtmcyvnx" path="res://assets/jul/om-marseille0088.png" id="89_nj7a0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n8ev8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_kyof7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_0yq0o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_fuxmh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_bt3of")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_48f4x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ayjc4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_a16q0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_jfvt3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_2hckh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_x85ca")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_b7fup")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_b4d0q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_pq1wm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_modle")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_scbep")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_3reeb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_rys23")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_gw40p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_81itg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_60v2h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_ptx1b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_do821")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_qu21j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_sdgha")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_8q353")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_rxubc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_j7ikw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_jwxlr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_ayn36")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_fkg77")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_xsf5y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_lh7h8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_0f6n8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_sgdwr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_bvk30")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_di0tw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_3vclv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_h2ge4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_lhsav")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_mal8f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_qm7qy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_rqccy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_v0fwd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_csys5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_onnof")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_y0b3c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_2fogp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_tbdel")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_7btpu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_iwqgv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_remq6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_l1dux")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_r12xf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_lecl2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_lxpac")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_2aca8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_ahs4h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_5gcri")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_i40q8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_jaw73")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_k81or")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_qbkk6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_lni8c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_yue54")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_v8vcr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_k0com")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_elf6a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_kmd2k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_og17r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_ainvw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_1ngrm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_1x15j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_biugr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_wx5g3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_ba5cv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_rmm6b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_w6c5s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_qjvn2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_jxc7y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_gewqv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_h4cce")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_rpydv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_gygir")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_xm4i8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_fd1s1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_sxjxq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_5vjag")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_thnxo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_nj7a0")
+}],
+"loop": true,
+"name": &"julling",
+"speed": 30.0
+}]
+
+[node name="Jul" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_n8ev8")
+animation = &"julling"
+frame_progress = 0.675405
