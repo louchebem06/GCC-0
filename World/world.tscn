@@ -37,5 +37,6 @@ position = Vector2(296, 752)
 [node name="Player" parent="." instance=ExtResource("3_w24n0")]
 position = Vector2(480, 704)
 
-[node name="spike_button" parent="." instance=ExtResource("4_purch")]
+[node name="spike_button" parent="." node_paths=PackedStringArray("spike") instance=ExtResource("4_purch")]
 position = Vector2(-224, -632)
+spike = NodePath("../Spike")

@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bfk4ywfm4b7sc"]
+[gd_scene load_steps=5 format=3 uid="uid://bfk4ywfm4b7sc"]
 
+[ext_resource type="Script" path="res://Interactions/interaction area/InteractionArea_spike.gd" id="1_8h5xp"]
 [ext_resource type="PackedScene" uid="uid://dha6p7kvrdqrq" path="res://Interactions/interaction area/InteractionArea_spike.tscn" id="1_mkadc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0mewh"]
@@ -9,6 +10,7 @@ size = Vector2(14, 14.5)
 radius = 25.2982
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_8h5xp")
 
 [node name="spike_button" type="StaticBody2D" parent="."]
 
@@ -22,13 +24,13 @@ polygon = PackedVector2Array(-26.25, -0.75, -26.25, 15.25, -10.25, 15.25, -10.25
 
 [node name="InteractionArea_spike" parent="spike_button" instance=ExtResource("1_mkadc")]
 position = Vector2(592, 727)
+script = null
 
 [node name="Area_spike" type="CollisionShape2D" parent="spike_button/InteractionArea_spike"]
 position = Vector2(-63, 32)
 shape = SubResource("CircleShape2D_i1eww")
 
 [node name="Label_spike" type="Label" parent="spike_button/InteractionArea_spike"]
-visible = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
