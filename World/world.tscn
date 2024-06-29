@@ -1,9 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dg522hy2gl5x4"]
+[gd_scene load_steps=6 format=3 uid="uid://dg522hy2gl5x4"]
 
-[ext_resource type="PackedScene" uid="uid://dha6p7kvrdqrq" path="res://Interactions/interaction area/InteractionArea.tscn" id="1_an04y"]
 [ext_resource type="PackedScene" uid="uid://cm46vcorm63qv" path="res://scenes/spike.tscn" id="2_fns4c"]
 [ext_resource type="PackedScene" uid="uid://c1ycsuc24bnxv" path="res://scenes/player.tscn" id="3_w24n0"]
 [ext_resource type="PackedScene" uid="uid://c0h7228utwprk" path="res://scenes/flame_trap.tscn" id="4_07af4"]
+[ext_resource type="PackedScene" uid="uid://bfk4ywfm4b7sc" path="res://Interactions/interaction area/spike_button.tscn" id="4_purch"]
 
 [sub_resource type="GDScript" id="GDScript_o7eik"]
 script/source = "extends StaticBody2D
@@ -18,57 +18,23 @@ func _ready():
 
 "
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ey7t"]
-size = Vector2(14, 14.5)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_uixip"]
-radius = 25.2982
-
 [node name="World" type="Node2D"]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="border" type="StaticBody2D" parent="."]
 script = SubResource("GDScript_o7eik")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="border"]
 polygon = PackedVector2Array(0, 0, 0, 160, 2432, 160, 2432, 176, 0, 176, 0, 768, 2432, 768, 2432, 208, 2432, 192, 2432, -512, 3456, -512, 3456, 1408, -1344, 1408, -1344, -512, 2432, -512, 2432, 0)
 
-[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D/CollisionPolygon2D"]
-
-[node name="AnimatableBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
-position = Vector2(529, 759.25)
-shape = SubResource("RectangleShape2D_4ey7t")
-
-[node name="Polygon2D" type="Polygon2D" parent="AnimatableBody2D/CollisionShape2D"]
-position = Vector2(19, -7.25)
-polygon = PackedVector2Array(-26.25, -0.75, -26.25, 15.25, -10.25, 15.25, -10.25, -0.75)
-
-[node name="InteractionArea" parent="AnimatableBody2D" instance=ExtResource("1_an04y")]
-position = Vector2(592, 727)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D/InteractionArea"]
-position = Vector2(-63, 32)
-shape = SubResource("CircleShape2D_uixip")
-
-[node name="Label" type="Label" parent="AnimatableBody2D/InteractionArea"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -114.0
-offset_top = -2.0
-offset_right = -9.0
-offset_bottom = 21.0
-grow_horizontal = 2
-text = "[E] to interact"
+[node name="Polygon2D" type="Polygon2D" parent="border/CollisionPolygon2D"]
 
 [node name="Spike" parent="." instance=ExtResource("2_fns4c")]
-position = Vector2(469, 760)
+position = Vector2(568, 760)
+
+[node name="FlameTrap" parent="." instance=ExtResource("4_07af4")]
+position = Vector2(296, 752)
 
 [node name="Player" parent="." instance=ExtResource("3_w24n0")]
 position = Vector2(480, 704)
 
-[node name="FlameTrap" parent="." instance=ExtResource("4_07af4")]
-position = Vector2(392, 744)
-
-[connection signal="area_entered" from="AnimatableBody2D/InteractionArea" to="StaticBody2D" method="_on_interaction_area_area_entered"]
+[node name="spike_button" parent="." instance=ExtResource("4_purch")]

@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfk4ywfm4b7sc"]
+
+[ext_resource type="PackedScene" uid="uid://dha6p7kvrdqrq" path="res://Interactions/interaction area/InteractionArea_spike.tscn" id="1_mkadc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0mewh"]
+size = Vector2(14, 14.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i1eww"]
+radius = 25.2982
+
+[node name="Node2D" type="Node2D"]
+
+[node name="spike_button" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spike_button"]
+position = Vector2(529, 759.25)
+shape = SubResource("RectangleShape2D_0mewh")
+
+[node name="Polygon2D" type="Polygon2D" parent="spike_button/CollisionShape2D"]
+position = Vector2(19, -7.25)
+polygon = PackedVector2Array(-26.25, -0.75, -26.25, 15.25, -10.25, 15.25, -10.25, -0.75)
+
+[node name="InteractionArea_spike" parent="spike_button" instance=ExtResource("1_mkadc")]
+position = Vector2(592, 727)
+
+[node name="Area_spike" type="CollisionShape2D" parent="spike_button/InteractionArea_spike"]
+position = Vector2(-63, 32)
+shape = SubResource("CircleShape2D_i1eww")
+
+[node name="Label_spike" type="Label" parent="spike_button/InteractionArea_spike"]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -114.0
+offset_top = -2.0
+offset_right = -9.0
+offset_bottom = 21.0
+grow_horizontal = 2
+text = "[E] to interact"
+metadata/_edit_use_anchors_ = true
