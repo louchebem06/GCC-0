@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmhwg3noojkm3"]
+
+[ext_resource type="PackedScene" uid="uid://c1ycsuc24bnxv" path="res://scenes/player.tscn" id="2_ftr8q"]
+[ext_resource type="PackedScene" uid="uid://cuicw0qrp1mr6" path="res://scenes/torch.tscn" id="2_ni8yu"]
+
+[node name="World" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(0, 0, 16, 0, 16, 160, 128, 160, 128, 136, 184, 136, 184, 160, 208, 160, 232, 136, 304, 136, 304, 0, 320, 0, 320, 184, 0, 184)
+
+[node name="Player" parent="." instance=ExtResource("2_ftr8q")]
+position = Vector2(32, 144)
+
+[node name="Torch" parent="." instance=ExtResource("2_ni8yu")]
+position = Vector2(264, 120)
