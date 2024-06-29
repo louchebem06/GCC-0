@@ -1,7 +1,15 @@
-[gd_scene load_steps=13 format=3 uid="uid://dusf4tniph0y1"]
+[gd_scene load_steps=14 format=3 uid="uid://dusf4tniph0y1"]
 
 [ext_resource type="Script" path="res://scripts/torch.gd" id="1_p1vnb"]
 [ext_resource type="Texture2D" uid="uid://csnaf6sutk2mc" path="res://assets/miscs/Torch.png" id="1_p64r2"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_fml8k"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:throw_velocity")
+properties/1/spawn = true
+properties/1/replication_mode = 1
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1vpkg"]
 atlas = ExtResource("1_p64r2")
@@ -73,10 +81,13 @@ size = Vector2(6, 13)
 [node name="Torch" type="Area2D"]
 script = ExtResource("1_p1vnb")
 
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_fml8k")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_j4h18")
 animation = &"burning"
-frame_progress = 0.257979
+frame_progress = 0.79943
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 8.5)

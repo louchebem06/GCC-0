@@ -10,7 +10,7 @@ var hover_speed = 2.0
 var hover_amplitude = 3.0
 
 var is_thrown = false
-var throw_velocity = Vector2.ZERO
+@export var throw_velocity = Vector2.ZERO
 var throw_speed = 300.0
 var falling = 600.0
 
