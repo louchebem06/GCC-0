@@ -19,15 +19,26 @@ var is_alive : bool = true
 var init_pos : Vector2
 
 func _ready():
-	init_pos = position
+	#await get_tree()
+	#if get_tree().has_network_peer():
+		#if is_network_master():
+			#camera.make_current()
+	#init_pos = position
+	if name == "1":
+		position = Vector2(100, 100)
+	else:
+		position = Vector2(200, 520)
+	pass
 
 func _physics_process(delta):
-	if is_alive:
-		var direction = get_horizontal_input()
-		handle_movement(direction, delta)
-		handle_gravity(delta)
-		handle_jump(delta)
-		update_animation(direction)
+	if is_multiplayer_authority():
+		#velocity = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down") * 100
+		#if is_alive:
+			var direction = get_horizontal_input()
+			handle_movement(direction, delta)
+			handle_gravity(delta)
+			handle_jump(delta)
+			update_animation(direction)
 
 	move_and_slide()
 
@@ -82,7 +93,7 @@ func update_animation(direction):
 			if animated_sprite_2d.animation != "fall":
 				animated_sprite_2d.play("fall")
 
-func _on_hitbox_area_entered(area):
+func _on_hitbox_area_entered(_area):
 	is_alive = false
 	velocity.x = 0
 	animated_sprite_2d.play("death")
@@ -90,3 +101,6 @@ func _on_hitbox_area_entered(area):
 	position = init_pos
 	is_alive = true
 	animated_sprite_2d.play("idle")
+
+func _enter_tree():
+	set_multiplayer_authority(name.to_int())
