@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://dl28cloelpjmk"]
+
+[ext_resource type="Script" path="res://area_2d.gd" id="1_5t3tj"]
+[ext_resource type="Texture2D" uid="uid://mjq1yoer0hll" path="res://assets/Flambeau.png" id="2_qj80f"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wkup2"]
+atlas = ExtResource("2_qj80f")
+region = Rect2(0, 0, 172, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cbevv"]
+atlas = ExtResource("2_qj80f")
+region = Rect2(172, 0, 172, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ipgt"]
+atlas = ExtResource("2_qj80f")
+region = Rect2(344, 0, 172, 180)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sa2c3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wkup2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cbevv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ipgt")
+}],
+"loop": true,
+"name": &"torche",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a3tno"]
+size = Vector2(14, 26)
+
+[node name="torche" type="Area2D"]
+position = Vector2(139, 91)
+script = ExtResource("1_5t3tj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0.75, 3.8147e-06)
+scale = Vector2(0.194767, 0.144444)
+sprite_frames = SubResource("SpriteFrames_sa2c3")
+animation = &"torche"
+frame_progress = 0.263554
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_a3tno")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

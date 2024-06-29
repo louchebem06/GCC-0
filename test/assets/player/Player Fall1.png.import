@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7lwdmxx8cqxd"
-path="res://.godot/imported/spikes.png-1f8241945bc2a7958c347c3ba257461d.ctex"
+uid="uid://cohd8o06m5brg"
+path="res://.godot/imported/Player Fall1.png-34f3c9ab7c693016c8f5cf87f9939aea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/traps/spikes.png"
-dest_files=["res://.godot/imported/spikes.png-1f8241945bc2a7958c347c3ba257461d.ctex"]
+source_file="res://assets/player/Player Fall1.png"
+dest_files=["res://.godot/imported/Player Fall1.png-34f3c9ab7c693016c8f5cf87f9939aea.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6a28ff2w0tdi"
-path="res://.godot/imported/Player Death.png-0c56321e8ab7c3ab6a7237c81e30f804.ctex"
+uid="uid://mjq1yoer0hll"
+path="res://.godot/imported/Flambeau.png-a45c1ad4bc3a1c52ec90e54c2397f261.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/player/Player Death.png"
-dest_files=["res://.godot/imported/Player Death.png-0c56321e8ab7c3ab6a7237c81e30f804.ctex"]
+source_file="res://assets/Flambeau.png"
+dest_files=["res://.godot/imported/Flambeau.png-a45c1ad4bc3a1c52ec90e54c2397f261.ctex"]
 
 [params]
 
