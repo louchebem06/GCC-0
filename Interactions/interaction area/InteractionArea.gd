@@ -1,26 +1,30 @@
 extends Area2D
 class_name InteractionArea
 
-
-@export var action_name: String = "interact"
 @onready var label = $Label
+@onready var spike = $"../../Spike"
+var player_in_area = false
+
 
 func _ready():
 	label.hide()
-
-var interact: Callable = func():
-	pass
+	connect("body_entered", _on_body_entered)
+	connect("body_exited", _on_body_exited)
 
 
 func _on_body_entered(body):
-	#InteractionManager.register_area(self)
-	print("Enter")
 	label.show()
-	pass
+	if body.is_in_group("Player"):
+		player_in_area = true
 
 
 func _on_body_exited(body):
-	#InteractionManager.unregister_area(self)
-	print("Exit")
 	label.hide()
-	pass
+	if body.is_in_group("Player"):
+		player_in_area = false
+
+
+func _process(delta):
+	if player_in_area && Input.is_action_just_pressed("interact"):
+		spike.activate_spikes()
+
