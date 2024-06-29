@@ -15,6 +15,7 @@ extends CharacterBody2D
 @export var gravity : int = 600
 var jump_timer : float = 0
 var is_alive : bool = true
+var facing : int = 1
 
 var init_pos : Vector2
 
@@ -43,8 +44,10 @@ func get_horizontal_input() -> int:
 	var left = Input.is_action_pressed("Left")
 	var right = Input.is_action_pressed("Right")
 	if left && !right:
+		facing = -1
 		return -1
 	elif right && !left:
+		facing = 1
 		return 1
 	else:
 		return 0
@@ -88,7 +91,7 @@ func update_animation(direction):
 				animated_sprite_2d.play("fall")
 
 # Death & Respawn
-func _on_hitbox_area_entered(area):
+func _on_hitbox_area_entered():
 	is_alive = false
 	velocity.x = 0
 	animated_sprite_2d.play("death")

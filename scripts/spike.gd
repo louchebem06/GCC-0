@@ -8,12 +8,11 @@ var is_on : bool = false
 func _ready():
 	collision_shape_2d.disabled = true
 
-func _process(delta):
+func _process(float) -> void:
 	if (Input.is_action_just_pressed("test") && !is_on):
 		is_on = true
 		activate_spikes()
 		await get_tree().create_timer(1.6).timeout
-
 
 func activate_spikes():
 	animated_sprite_2d.play("on")
