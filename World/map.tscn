@@ -1,6 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://dy66au3qnoyoo"]
+[gd_scene load_steps=6 format=3 uid="uid://dy66au3qnoyoo"]
 
 [ext_resource type="Script" path="res://World/border.gd" id="1_565ca"]
+[ext_resource type="PackedScene" uid="uid://cm46vcorm63qv" path="res://scenes/Trap.tscn" id="2_n2nbf"]
+[ext_resource type="PackedScene" uid="uid://bfk4ywfm4b7sc" path="res://Interactions/interaction area/button.tscn" id="3_jmjr4"]
+[ext_resource type="PackedScene" uid="uid://dusf4tniph0y1" path="res://scenes/torch.tscn" id="4_gu6tl"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_75vvq"]
+properties/0/path = NodePath("Trap:is_on")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath("Trap:disable_mode")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath("Trap:collision_layer")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+properties/3/path = NodePath("Trap:collision_mask")
+properties/3/spawn = true
+properties/3/replication_mode = 1
 
 [node name="Map" type="Node2D"]
 
@@ -59,10 +76,6 @@ polygon = PackedVector2Array(1344, 664, 1352, 664, 1352, 672, 1344, 672)
 [node name="CollisionPolygon2D14" type="CollisionPolygon2D" parent="border"]
 polygon = PackedVector2Array(1344, 664, 1352, 664, 1352, 672, 1344, 672)
 
-[node name="CollisionPolygon2D15" type="CollisionPolygon2D" parent="border"]
-position = Vector2(-16, -16)
-polygon = PackedVector2Array(1728, 648, 1728, 576, 1792, 576, 1792, 648)
-
 [node name="CollisionPolygon2D16" type="CollisionPolygon2D" parent="border"]
 polygon = PackedVector2Array(1920, 640, 1920, 648, 2000, 648, 2000, 640)
 one_way_collision = true
@@ -101,3 +114,19 @@ polygon = PackedVector2Array(2280, 600, 2280, 608, 2288, 608, 2288, 600)
 
 [node name="CollisionPolygon2D27" type="CollisionPolygon2D" parent="border"]
 polygon = PackedVector2Array(2240, 600, 2240, 608, 2248, 608, 2248, 600)
+
+[node name="CollisionPolygon2D28" type="CollisionPolygon2D" parent="border"]
+polygon = PackedVector2Array(0, 552, 0, 560, 16.196, 560, 2816, 560, 2816, 552, 15.9153, 552)
+
+[node name="Trap" parent="." instance=ExtResource("2_n2nbf")]
+position = Vector2(272, 744)
+
+[node name="button" parent="." node_paths=PackedStringArray("Trap") instance=ExtResource("3_jmjr4")]
+position = Vector2(272, 544)
+Trap = NodePath("../Trap")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_75vvq")
+
+[node name="Torch" parent="." instance=ExtResource("4_gu6tl")]
+position = Vector2(344, 520)

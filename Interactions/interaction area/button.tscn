@@ -15,7 +15,7 @@ script = ExtResource("1_tcrbq")
 [node name="button" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="button"]
-position = Vector2(529, 759.25)
+position = Vector2(0, 0.25)
 shape = SubResource("RectangleShape2D_0mewh")
 
 [node name="Polygon2D" type="Polygon2D" parent="button/CollisionShape2D"]
@@ -23,7 +23,8 @@ position = Vector2(19, -7.25)
 polygon = PackedVector2Array(-26.25, -0.75, -26.25, 15.25, -10.25, 15.25, -10.25, -0.75)
 
 [node name="Buton_InteractionArea" parent="button" instance=ExtResource("2_20meg")]
-position = Vector2(592, 727)
+position = Vector2(63, -32)
+collision_mask = 10
 script = null
 
 [node name="Area" type="CollisionShape2D" parent="button/Buton_InteractionArea"]

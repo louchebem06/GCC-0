@@ -1,14 +1,12 @@
 extends Area2D
 
 @onready var animated_sprite_2d = $AnimatedSprite2D
-@onready var collision = $collision
-
-
 @export var is_on : bool = false
-
+@onready var collision = $collision
 
 func _ready():
 	collision.disabled = true
+
 
  
 func activate_trap():
