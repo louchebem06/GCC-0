@@ -4,15 +4,15 @@ extends Area2D
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var collision_shape_2d = $CollisionShape2D
 
-var is_held = false
-var hover_offset = 0.0
-var hover_speed = 2.0
-var hover_amplitude = 3.0
+@export var is_held = false
+@export var hover_offset = 0.0
+@export var hover_speed = 2.0
+@export var hover_amplitude = 3.0
 
-var is_thrown = false
+@export var is_thrown = false
 @export var throw_velocity = Vector2.ZERO
-var throw_speed = 300.0
-var falling = 600.0
+@export var throw_speed = 300.0
+@export var falling = 600.0
 
 func _ready():
 	animated_sprite_2d.play("burning")
