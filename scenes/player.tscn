@@ -244,6 +244,5 @@ shape = SubResource("RectangleShape2D_pgq4l")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-1, -71)
-zoom = Vector2(0.6, 0.6)
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

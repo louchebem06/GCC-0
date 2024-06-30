@@ -6,7 +6,8 @@ extends Node2D
 @onready var joinButton = $MainMenu/JoinButton
 @onready var createServerButton = $MainMenu/CreateServerButton
 
-@onready var world = $World
+@onready var world = $Map
+
 
 const DEFAULT_IP = "127.0.0.1";
 const PORT = 4242;
