@@ -24,8 +24,6 @@ properties/3/replication_mode = 1
 [node name="Testos" type="Node2D" node_paths=PackedStringArray("world")]
 script = ExtResource("1_byobm")
 world = NodePath("Map")
-metadata/_edit_horizontal_guides_ = [231.0]
-metadata/_edit_vertical_guides_ = [320.0]
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
 _spawnable_scenes = PackedStringArray("res://scenes/player.tscn")
@@ -65,7 +63,7 @@ text = "Join"
 
 [node name="CreateServerButton" type="Button" parent="MainMenu"]
 layout_mode = 2
-offset_left = 455.0
+offset_left = 447.0
 offset_top = 317.0
 offset_right = 623.0
 offset_bottom = 348.0
@@ -78,6 +76,31 @@ offset_top = 12.0
 offset_right = 631.0
 offset_bottom = 43.0
 text = "🔊"
+
+[node name="quit-button" type="Button" parent="MainMenu"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 317.0
+offset_right = 103.0
+offset_bottom = 348.0
+text = "Quit"
+
+[node name="DeathMenu" type="Control" parent="."]
+visible = false
+top_level = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="DeathMenu"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Tu es mort !"
 
 [node name="Map" parent="." instance=ExtResource("2_8y3be")]
 
@@ -92,3 +115,4 @@ autoplay = true
 position = Vector2(155, 695)
 
 [connection signal="pressed" from="MainMenu/stop-sound" to="MainMenu" method="_on_stop_sound_pressed"]
+[connection signal="pressed" from="MainMenu/quit-button" to="." method="_on_quitbutton_pressed"]

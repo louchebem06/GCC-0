@@ -77,3 +77,8 @@ func _on_connection_failed():
 func _on_server_disconnected():
 	mainMenu.show()
 	world.hide();
+
+
+func _on_quitbutton_pressed():
+	get_tree().quit()
+	pass # Replace with function body.
