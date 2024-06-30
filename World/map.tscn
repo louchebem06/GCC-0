@@ -18,11 +18,6 @@ properties/2/replication_mode = 1
 properties/3/path = NodePath("Trap:collision_mask")
 properties/3/spawn = true
 properties/3/replication_mode = 1
-[gd_scene load_steps=4 format=3 uid="uid://dy66au3qnoyoo"]
-
-[ext_resource type="Script" path="res://World/border.gd" id="1_565ca"]
-[ext_resource type="PackedScene" uid="uid://cm46vcorm63qv" path="res://scenes/Trap.tscn" id="2_ttt06"]
-[ext_resource type="PackedScene" uid="uid://bfk4ywfm4b7sc" path="res://Interactions/interaction area/button.tscn" id="3_bravd"]
 
 [node name="Map" type="Node2D"]
 
@@ -135,10 +130,3 @@ replication_config = SubResource("SceneReplicationConfig_75vvq")
 
 [node name="Torch" parent="." instance=ExtResource("4_gu6tl")]
 position = Vector2(344, 520)
-polygon = PackedVector2Array(0, 528, 0, 536, 2816, 536, 2816, 528)
-
-[node name="Trap" parent="." instance=ExtResource("2_ttt06")]
-position = Vector2(272, 744)
-
-[node name="Node2D" parent="." instance=ExtResource("3_bravd")]
-position = Vector2(272, 520)
