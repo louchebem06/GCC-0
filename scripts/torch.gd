@@ -1,6 +1,7 @@
 extends Area2D
 
 @onready var player = null;
+@onready var tile_map = $"../TileMap"
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var collision_shape_2d = $CollisionShape2D
 
@@ -27,6 +28,7 @@ func _process(delta):
 			position = player.position + Vector2(0, -30 + hover)
 		
 		if Input.is_action_just_pressed("Drop"):
+			falling = 600.0
 			is_held = false
 			is_thrown = true
 			collision_shape_2d.disabled = false
@@ -39,11 +41,16 @@ func _process(delta):
 		position += throw_velocity * delta
 
 func _on_body_entered(body):
-	if !is_thrown:
+	if body != tile_map && !is_thrown:
 		player = body
 		is_held = true
 		collision_shape_2d.disabled = true
-
+	else:
+		is_thrown = false
+		falling = 0
+		throw_velocity.y = 0
+		throw_velocity.x = 0
+		
 func _on_body_exited(body):
 	if is_thrown:
 		player = null
