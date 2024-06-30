@@ -1,7 +1,6 @@
 extends Area2D
 
 @onready var player = null;
-@onready var tile_map = $"../TileMap"
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var collision_shape_2d = $CollisionShape2D
 
@@ -41,7 +40,7 @@ func _process(delta):
 		position += throw_velocity * delta
 
 func _on_body_entered(body):
-	if body != tile_map && !is_thrown:
+	if body.name != "TileMap" && !is_thrown:
 		player = body
 		is_held = true
 		collision_shape_2d.disabled = true
@@ -51,6 +50,6 @@ func _on_body_entered(body):
 		throw_velocity.y = 0
 		throw_velocity.x = 0
 		
-func _on_body_exited(body):
+func _on_body_exited(_body):
 	if is_thrown:
 		player = null

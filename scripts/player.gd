@@ -33,7 +33,7 @@ func _ready():
 	pass
 
 func _physics_process(delta):
-	if is_multiplayer_authority():
+	if is_multiplayer_authority() && is_alive:
 		var direction = get_horizontal_input()
 		handle_movement(direction, delta)
 		handle_jump(delta)
@@ -92,7 +92,8 @@ func update_animation(direction):
 			if animated_sprite_2d.animation != "fall":
 				animated_sprite_2d.play("fall")
 
-func _on_hitbox_area_entered(_area):
+func _on_hitbox_area_entered(area):
+	print("area: " + area.name)
 	is_alive = false
 	velocity.x = 0
 	animated_sprite_2d.play("death")
