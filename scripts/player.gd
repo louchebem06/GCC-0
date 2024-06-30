@@ -15,7 +15,7 @@ extends CharacterBody2D
 @export var gravity : int = 600
 var jump_timer : float = 0
 @export var is_alive : bool = true
-var facing : int = 1
+@export var facing : int = 1
 
 var init_pos : Vector2
 
@@ -27,9 +27,9 @@ func _ready():
 		camera.make_current()
 	#init_pos = position
 	if name == "1":
-		position = Vector2(32, 32)
+		position = Vector2(16, 536)
 	else:
-		position = Vector2(32, 320)
+		position = Vector2(64, 576)
 	pass
 
 func _physics_process(delta):
