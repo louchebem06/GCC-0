@@ -18,6 +18,8 @@ var peer = ENetMultiplayerPeer.new()
 
 var player_scene = preload("res://scenes/player.tscn");
 
+@onready var label = $MainMenu/Label
+
 func _ready():
 	multiplayer.peer_connected.connect(_on_player_connected)
 	multiplayer.peer_disconnected.connect(_on_player_disconnected)
@@ -33,11 +35,14 @@ func _process(_delta):
 		get_tree().quit()
 
 func _joinButtonPressed():
+	label.text = "Loading"
+	var error;
 	if inputIP.text == null || inputIP.text == "":
-		peer.create_client(DEFAULT_IP, PORT)
+		error = peer.create_client(DEFAULT_IP, PORT)
 	else:
-		peer.create_client(inputIP.text, PORT)
-	multiplayer.multiplayer_peer = peer
+		error = peer.create_client(inputIP.text, PORT)
+	if error == OK:
+		multiplayer.multiplayer_peer = peer
 
 func _createServerButton():
 	if (peer.create_server(PORT) == OK):
@@ -45,6 +50,8 @@ func _createServerButton():
 		_add_player(multiplayer.get_unique_id())
 		mainMenu.hide()
 		world.show()
+	else:
+		label.text = "Error: Create Server"
 
 @rpc("any_peer")
 func _add_player(id):
@@ -65,15 +72,22 @@ func _on_player_connected(id):
 func _on_player_disconnected(id):
 	_remove_player(id)
 	emit_signal("player_disconnected", id)
+	multiplayer.multiplayer_peer = null
 
 func _on_connection_succeeded():
 	mainMenu.hide()
 	rpc("_add_player", multiplayer.get_unique_id())
 
 func _on_connection_failed():
+	label.text = ""
 	mainMenu.show()
 	world.hide();
+	label.text = "Error: Connection fail"
+	multiplayer.multiplayer_peer = null
 
 func _on_server_disconnected():
+	label.text = ""
 	mainMenu.show()
 	world.hide();
+	label.text = "Error: Server disconect"
+	multiplayer.multiplayer_peer = null

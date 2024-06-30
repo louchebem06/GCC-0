@@ -6,8 +6,6 @@ extends Area2D
 
 func _ready():
 	collision.disabled = true
-
-
  
 func activate_trap():
 	is_on = true
