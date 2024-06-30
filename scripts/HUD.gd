@@ -6,8 +6,7 @@ extends Node2D
 @onready var joinButton = $MainMenu/JoinButton
 @onready var createServerButton = $MainMenu/CreateServerButton
 
-@onready var world = $Map
-
+@export var world: Node
 
 const DEFAULT_IP = "127.0.0.1";
 const PORT = 4242;
@@ -44,17 +43,17 @@ func _createServerButton():
 	if (peer.create_server(PORT) == OK):
 		multiplayer.multiplayer_peer = peer
 		_add_player(multiplayer.get_unique_id())
-		mainMenu.hide()
+		#mainMenu.hide()
 		world.show()
 
 @rpc("any_peer")
 func _add_player(id):
 	var player = player_scene.instantiate()
-	player.name = str(id)
+	player.name = "Player_" + str(id)
 	call_deferred('add_child', player);
 
 func _remove_player(id):
-	var player_name = str(id)
+	var player_name = "Player_" + str(id)
 	var player = get_node_or_null(player_name)
 	if player:
 		player.queue_free()
@@ -68,7 +67,7 @@ func _on_player_disconnected(id):
 	emit_signal("player_disconnected", id)
 
 func _on_connection_succeeded():
-	mainMenu.hide()
+	#mainMenu.hide()
 	rpc("_add_player", multiplayer.get_unique_id())
 
 func _on_connection_failed():
