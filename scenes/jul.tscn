@@ -1,5 +1,6 @@
-[gd_scene load_steps=91 format=3 uid="uid://bon8pv5gv7uj8"]
+[gd_scene load_steps=92 format=3 uid="uid://bon8pv5gv7uj8"]
 
+[ext_resource type="Script" path="res://scripts/jul.gd" id="1_85fxp"]
 [ext_resource type="Texture2D" uid="uid://crqckernpcgfy" path="res://assets/jul/om-marseille0000.png" id="1_kyof7"]
 [ext_resource type="Texture2D" uid="uid://dshk3lq0jfqnn" path="res://assets/jul/om-marseille0001.png" id="2_0yq0o"]
 [ext_resource type="Texture2D" uid="uid://bx24xnk5nallp" path="res://assets/jul/om-marseille0002.png" id="3_fuxmh"]
@@ -366,8 +367,9 @@ animations = [{
 }]
 
 [node name="Jul" type="Node2D"]
+script = ExtResource("1_85fxp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_n8ev8")
 animation = &"julling"
-frame_progress = 0.675405
+frame_progress = 0.123636
