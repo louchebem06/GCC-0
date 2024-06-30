@@ -43,7 +43,7 @@ func _createServerButton():
 	if (peer.create_server(PORT) == OK):
 		multiplayer.multiplayer_peer = peer
 		_add_player(multiplayer.get_unique_id())
-		#mainMenu.hide()
+		mainMenu.hide()
 		world.show()
 
 @rpc("any_peer")
@@ -67,7 +67,7 @@ func _on_player_disconnected(id):
 	emit_signal("player_disconnected", id)
 
 func _on_connection_succeeded():
-	#mainMenu.hide()
+	mainMenu.hide()
 	rpc("_add_player", multiplayer.get_unique_id())
 
 func _on_connection_failed():

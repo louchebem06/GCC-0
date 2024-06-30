@@ -80,9 +80,6 @@ text = "🔊"
 
 [node name="Map" parent="." instance=ExtResource("2_8y3be")]
 
-[node name="Torch" parent="." instance=ExtResource("3_wbhqo")]
-position = Vector2(136, 680)
-
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_s07cx")
 

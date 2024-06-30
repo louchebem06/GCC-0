@@ -3,20 +3,6 @@
 [ext_resource type="Script" path="res://scripts/spike.gd" id="1_h55oi"]
 [ext_resource type="Texture2D" uid="uid://c7lwdmxx8cqxd" path="res://assets/traps/spikes.png" id="2_fxrkl"]
 
-[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_rl6vj"]
-properties/0/path = NodePath("AnimatedSprite2D:animation")
-properties/0/spawn = true
-properties/0/replication_mode = 1
-properties/1/path = NodePath("AnimatedSprite2D:frame")
-properties/1/spawn = true
-properties/1/replication_mode = 1
-properties/2/path = NodePath("spike_collision:disabled")
-properties/2/spawn = true
-properties/2/replication_mode = 1
-properties/3/path = NodePath(".:is_on")
-properties/3/spawn = true
-properties/3/replication_mode = 1
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_srq36"]
 atlas = ExtResource("2_fxrkl")
 region = Rect2(0, 0, 32, 16)
@@ -155,13 +141,24 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i0dds"]
 size = Vector2(30, 12)
 
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_mpsw8"]
+properties/0/path = NodePath(".:is_on")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath("collision:disabled")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath("AnimatedSprite2D:animation")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+properties/3/path = NodePath("AnimatedSprite2D:frame")
+properties/3/spawn = true
+properties/3/replication_mode = 1
+
 [node name="Trap" type="Area2D"]
 collision_layer = 6
-collision_mask = 4
+collision_mask = 6
 script = ExtResource("1_h55oi")
-
-[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
-replication_config = SubResource("SceneReplicationConfig_rl6vj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_h8p60")
@@ -170,6 +167,9 @@ animation = &"on"
 [node name="collision" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_i0dds")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_mpsw8")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

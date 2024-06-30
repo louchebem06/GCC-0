@@ -227,8 +227,8 @@ animations = [{
 size = Vector2(8, 12)
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
-collision_layer = 15
-collision_mask = 15
+collision_layer = 7
+collision_mask = 3
 floor_constant_speed = true
 floor_snap_length = 2.0
 script = ExtResource("1_n2xop")
@@ -245,6 +245,8 @@ sprite_frames = SubResource("SpriteFrames_4rhpc")
 animation = &"idle"
 
 [node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 5
+collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(0, -1)

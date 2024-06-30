@@ -7,7 +7,7 @@ extends Control
 func _ready():
 	pass
 #multiplayer.get_unique_id()
-func _process(delta):
+func _process(_delta):
 	#var players = testos.get_children().filter(_filterPlayer);
 	#for player in players:
 		#if player.name.split('_')[1] == str(multiplayer.get_unique_id()):

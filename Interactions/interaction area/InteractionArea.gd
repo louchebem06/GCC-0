@@ -26,6 +26,6 @@ func _on_body_exited(body):
 		player_in_area = false
 
 
-func _process(delta):
+func _process(_delta):
 	if player_in_area && Input.is_action_just_pressed("interact"):
 		Trap.activate_trap()
