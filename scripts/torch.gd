@@ -13,27 +13,30 @@ extends Area2D
 @export var throw_velocity = Vector2.ZERO
 @export var throw_speed = 300.0
 @export var falling = 600.0
+var postorch = null
 
 func _ready():
 	animated_sprite_2d.play("burning")
 	connect("body_entered", Callable(self, "_on_body_entered"))
-	connect("body_exited", Callable(self, "_on_body_exited"))
 
 func _process(delta):
 	if is_held:
 		hover_offset += hover_speed * delta
 		var hover = sin(hover_offset) * hover_amplitude
-		if player:
-			position = player.position + Vector2(0, -30 + hover)
+		if player && player.is_alive:
+			postorch = player.position + Vector2(0, -30 + hover)
+			position = postorch
+#		else:
+#			position = postorch + Vector2(0, 30 + hover)
 		
 		if Input.is_action_just_pressed("Drop"):
-			falling = 600.0
 			is_held = false
 			is_thrown = true
-			collision_shape_2d.disabled = false
 			var direction = player.facing
 			player = null
 			throw_velocity = Vector2(direction * throw_speed, -throw_speed / 2)
+			falling = 600.0
+			collision_shape_2d.disabled = false
 
 	if is_thrown:
 		throw_velocity.y += falling * delta
