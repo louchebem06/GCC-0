@@ -1,6 +1,6 @@
 extends Node2D
 class_name InteractionArea
-
+@onready var sprite = $button/CollisionShape2D/SPRITE
 @onready var label = $button/Buton_InteractionArea/Label
 @export var Trap : Area2D
 @export var Trap2 : Area2D
@@ -31,6 +31,7 @@ func _on_body_exited(body):
 
 func _process(_delta):
 	if player_in_area && Input.is_action_just_pressed("interact"):
+		sprite.play("lever")
 		Trap.activate_trap()
 		if Trap2:
 			Trap2.activate_trap()

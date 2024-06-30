@@ -1,10 +1,36 @@
-[gd_scene load_steps=5 format=3 uid="uid://bfk4ywfm4b7sc"]
+[gd_scene load_steps=9 format=3 uid="uid://bfk4ywfm4b7sc"]
 
 [ext_resource type="Script" path="res://Interactions/interaction area/InteractionArea.gd" id="1_tcrbq"]
 [ext_resource type="PackedScene" uid="uid://dha6p7kvrdqrq" path="res://Interactions/interaction area/InteractionArea.tscn" id="2_20meg"]
+[ext_resource type="Texture2D" uid="uid://u0363xir646u" path="res://assets/miscs/Lever.png" id="2_k440i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0mewh"]
 size = Vector2(14, 14.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qf0c4"]
+atlas = ExtResource("2_k440i")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_80m5e"]
+atlas = ExtResource("2_k440i")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ia4xt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qf0c4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_80m5e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qf0c4")
+}],
+"loop": false,
+"name": &"lever",
+"speed": 3.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i1eww"]
 radius = 16.0
@@ -20,9 +46,12 @@ collision_mask = 0
 position = Vector2(0, 0.25)
 shape = SubResource("RectangleShape2D_0mewh")
 
-[node name="Polygon2D" type="Polygon2D" parent="button/CollisionShape2D"]
-position = Vector2(19, -7.25)
-polygon = PackedVector2Array(-26.25, -0.75, -26.25, 15.25, -10.25, 15.25, -10.25, -0.75)
+[node name="SPRITE" type="AnimatedSprite2D" parent="button/CollisionShape2D"]
+position = Vector2(0, -0.25)
+sprite_frames = SubResource("SpriteFrames_ia4xt")
+animation = &"lever"
+frame = 2
+frame_progress = 1.0
 
 [node name="Buton_InteractionArea" parent="button" instance=ExtResource("2_20meg")]
 position = Vector2(63, -32)
