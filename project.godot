@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="Game Jam - 42 Nice"
+config/name="Olympic Survival: Race to Save the Games"
 run/main_scene="res://HUD/testos.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
-config/icon="res://assets/icon.svg"
+config/icon="res://assets/Logo_Paris_2024.svg"
 
 [display]
 
