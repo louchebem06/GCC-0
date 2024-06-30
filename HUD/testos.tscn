@@ -106,10 +106,10 @@ autoplay = true
 position = Vector2(155, 695)
 
 [node name="ip" type="Label" parent="."]
-offset_left = 99.0
-offset_top = 470.0
-offset_right = 222.0
-offset_bottom = 493.0
+offset_left = 88.0
+offset_top = 384.0
+offset_right = 211.0
+offset_bottom = 407.0
 text = "IP"
 
 [connection signal="pressed" from="MainMenu/stop-sound" to="MainMenu" method="_on_stop_sound_pressed"]
