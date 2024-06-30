@@ -123,9 +123,6 @@ Trap = NodePath("../Trap2")
 [node name="Trap2" parent="." instance=ExtResource("2_n2nbf")]
 position = Vector2(768, 728)
 
-[node name="Torch" parent="." instance=ExtResource("4_gu6tl")]
-position = Vector2(216, 664)
-
 [node name="button3" parent="." node_paths=PackedStringArray("Trap", "Trap2", "Trap3") instance=ExtResource("3_jmjr4")]
 position = Vector2(1104, 544)
 Trap = NodePath("../Trap3")
@@ -141,11 +138,12 @@ position = Vector2(32, 0)
 [node name="Trap2" parent="Trap3/Trap2" instance=ExtResource("2_n2nbf")]
 position = Vector2(-64, 0)
 
-[node name="button4" parent="." node_paths=PackedStringArray("Trap", "Trap2", "Trap3") instance=ExtResource("3_jmjr4")]
+[node name="button4" parent="." node_paths=PackedStringArray("Trap", "Trap2", "Trap3", "Trap4") instance=ExtResource("3_jmjr4")]
 position = Vector2(1408, 544)
 Trap = NodePath("../Trap4")
 Trap2 = NodePath("../Trap9")
 Trap3 = NodePath("../Trap10")
+Trap4 = NodePath("../Trap11")
 
 [node name="Trap4" parent="." instance=ExtResource("2_n2nbf")]
 position = Vector2(1408, 672)
@@ -183,3 +181,9 @@ position = Vector2(1360, 696)
 
 [node name="Trap10" parent="." instance=ExtResource("2_n2nbf")]
 position = Vector2(1456, 695)
+
+[node name="Torch" parent="." instance=ExtResource("4_gu6tl")]
+position = Vector2(216, 666)
+
+[node name="Trap11" parent="." instance=ExtResource("2_n2nbf")]
+position = Vector2(1408, 632)

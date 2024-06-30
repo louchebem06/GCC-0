@@ -5,6 +5,7 @@ class_name InteractionArea
 @export var Trap : Area2D
 @export var Trap2 : Area2D
 @export var Trap3 : Area2D
+@export var Trap4 : Area2D
 var player_in_area = false
 @onready var buton_interaction_area = $button/Buton_InteractionArea
 
@@ -35,4 +36,6 @@ func _process(_delta):
 			Trap2.activate_trap()
 			if Trap3:
 				Trap3.activate_trap()
+				if Trap4:
+					Trap4.activate_trap()
 
