@@ -26,10 +26,10 @@ func _ready():
 	if str(multiplayer.get_unique_id()) == name.split("_")[1]:
 		camera.make_current()
 	#init_pos = position
-	if name == "1":
-		position = Vector2(16, 536)
+	if name == "Player_1":
+		position = Vector2(32, 500)
 	else:
-		position = Vector2(64, 576)
+		position = Vector2(32, 580)
 	pass
 
 func _physics_process(delta):

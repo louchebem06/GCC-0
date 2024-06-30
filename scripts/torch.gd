@@ -27,7 +27,7 @@ func _process(delta):
 		if player:
 			position = player.position + Vector2(0, -30 + hover)
 		
-		if Input.is_action_just_pressed("Drop"):
+		if Input.is_action_just_pressed("Drop") && str(multiplayer.get_unique_id()) == name.split("_")[1]:
 			falling = 600.0
 			is_held = false
 			is_thrown = true
