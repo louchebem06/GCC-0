@@ -3,6 +3,9 @@ class_name InteractionArea
 
 @onready var label = $button/Buton_InteractionArea/Label
 @export var Trap : Area2D
+@export var Trap2 : Area2D
+@export var Trap3 : Area2D
+@export var Trap4 : Area2D
 var player_in_area = false
 @onready var buton_interaction_area = $button/Buton_InteractionArea
 
@@ -29,3 +32,10 @@ func _on_body_exited(body):
 func _process(_delta):
 	if player_in_area && Input.is_action_just_pressed("interact"):
 		Trap.activate_trap()
+		if Trap2:
+			Trap2.activate_trap()
+			if Trap3:
+				Trap3.activate_trap()
+				if Trap4:
+					Trap4.activate_trap()
+
