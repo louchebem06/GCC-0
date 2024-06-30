@@ -8,6 +8,9 @@ extends Node2D
 
 @export var world: Node
 
+@onready var ip = $ip
+
+
 const DEFAULT_IP = "127.0.0.1";
 const PORT = 4242;
 
@@ -39,12 +42,20 @@ func _joinButtonPressed():
 		peer.create_client(inputIP.text, PORT)
 	multiplayer.multiplayer_peer = peer
 
+func _getIP():
+	var tmp = ""
+	for ip in IP.get_local_addresses():
+		if ip.match("*.*.*.*") && ip != "127.0.0.1":
+			tmp = ip;
+	return tmp
+
 func _createServerButton():
 	if (peer.create_server(PORT) == OK):
 		multiplayer.multiplayer_peer = peer
 		_add_player(multiplayer.get_unique_id())
 		mainMenu.hide()
 		world.show()
+		ip.text = _getIP();
 
 @rpc("any_peer")
 func _add_player(id):
