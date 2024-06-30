@@ -11,6 +11,9 @@
 properties/0/path = NodePath(".:position")
 properties/0/spawn = true
 properties/0/replication_mode = 1
+properties/1/path = NodePath(".:is_alive")
+properties/1/spawn = true
+properties/1/replication_mode = 1
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_psdhv"]
 size = Vector2(12, 14)
@@ -214,7 +217,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pgq4l"]
 size = Vector2(8, 12)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+collision_layer = 3
 floor_constant_speed = true
 floor_snap_length = 2.0
 script = ExtResource("1_n2xop")
@@ -237,5 +241,8 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_pgq4l")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-1, -71)
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

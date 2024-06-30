@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bdbm4lmy56tu0"]
 
 [ext_resource type="Script" path="res://scripts/HUD.gd" id="1_h7uti"]
-[ext_resource type="PackedScene" uid="uid://bmhwg3noojkm3" path="res://scenes/world.tscn" id="2_wol71"]
+[ext_resource type="PackedScene" uid="uid://dy66au3qnoyoo" path="res://World/map.tscn" id="2_t3ogb"]
 
 [node name="Testos" type="Node2D"]
 script = ExtResource("1_h7uti")
@@ -46,4 +46,4 @@ offset_right = 663.0
 offset_bottom = 196.0
 text = "Server"
 
-[node name="World" parent="." instance=ExtResource("2_wol71")]
+[node name="Map" parent="." instance=ExtResource("2_t3ogb")]

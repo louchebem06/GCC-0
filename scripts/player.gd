@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var hitbox = $Hitbox
-
+@onready var camera = $Camera2D
 @export_category("Movement Variables")
 @export var move_speed : int = 100
 @export var acceleration : int = 1000
@@ -14,7 +14,7 @@ extends CharacterBody2D
 @export var jump_hold_time : float = 1
 @export var gravity : int = 600
 var jump_timer : float = 0
-var is_alive : bool = true
+@export var is_alive : bool = true
 
 var init_pos : Vector2
 
@@ -22,7 +22,8 @@ func _ready():
 	#await get_tree()
 	#if get_tree().has_network_peer():
 		#if is_network_master():
-			#camera.make_current()
+	if str(multiplayer.get_unique_id()) == name:
+		camera.make_current()
 	#init_pos = position
 	if name == "1":
 		position = Vector2(100, 100)
@@ -33,12 +34,12 @@ func _ready():
 func _physics_process(delta):
 	if is_multiplayer_authority():
 		#velocity = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down") * 100
-		#if is_alive:
+		if is_alive:
 			var direction = get_horizontal_input()
 			handle_movement(direction, delta)
-			handle_gravity(delta)
 			handle_jump(delta)
 			update_animation(direction)
+		handle_gravity(delta)
 
 	move_and_slide()
 
@@ -97,10 +98,10 @@ func _on_hitbox_area_entered(_area):
 	is_alive = false
 	velocity.x = 0
 	animated_sprite_2d.play("death")
-	await get_tree().create_timer(0.9).timeout
-	position = init_pos
-	is_alive = true
-	animated_sprite_2d.play("idle")
+	#await get_tree().create_timer(0.9).timeout
+	#position = init_pos
+	#is_alive = true
+	#animated_sprite_2d.play("idle")
 
 func _enter_tree():
 	set_multiplayer_authority(name.to_int())
