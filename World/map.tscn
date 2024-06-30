@@ -274,9 +274,7 @@ position = Vector2(1360, 696)
 position = Vector2(1456, 695)
 
 [node name="Torch" parent="." instance=ExtResource("4_gu6tl")]
-position = Vector2(216, 666)
+position = Vector2(2776, 616)
 
 [node name="Trap11" parent="." instance=ExtResource("2_n2nbf")]
 position = Vector2(1408, 632)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
