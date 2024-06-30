@@ -94,9 +94,11 @@ func update_animation(direction):
 
 func _on_hitbox_area_entered(area):
 	print("area: " + area.name)
-	is_alive = false
-	velocity.x = 0
-	animated_sprite_2d.play("death")
+	if area.name != "Torch" && area.name != "Hitbox":
+		is_alive = false
+		velocity.x = 0
+		animated_sprite_2d.play("death")
+	 
 	#await get_tree().create_timer(0.9).timeout
 	#position = init_pos
 	#is_alive = true
