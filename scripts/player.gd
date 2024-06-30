@@ -23,7 +23,7 @@ func _ready():
 	#await get_tree()
 	#if get_tree().has_network_peer():
 		#if is_network_master():
-	if str(multiplayer.get_unique_id()) == name:
+	if str(multiplayer.get_unique_id()) == name.split("_")[1]:
 		camera.make_current()
 	#init_pos = position
 	if name == "1":
