@@ -1,6 +1,8 @@
 extends Control
 
 @onready var testos = $".."
+@onready var jo_ambiance_sound = $"../jo-ambiance-sound"
+@onready var stop_sound = $"stop-sound"
 
 func _ready():
 	pass
@@ -17,3 +19,13 @@ func _process(delta):
 #
 #func _moveCam(camera: Camera2D):
 	#self.anchors_preset = camera.anchor_mode
+
+
+func _on_stop_sound_pressed():
+	if jo_ambiance_sound.playing:
+		stop_sound.text = '🔈'
+		jo_ambiance_sound.stop()
+	else:
+		stop_sound.text = '🔊'
+		jo_ambiance_sound.play()
+	pass # Replace with function body.
