@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bdbm4lmy56tu0"]
+[gd_scene load_steps=7 format=3 uid="uid://bdbm4lmy56tu0"]
 
 [ext_resource type="Script" path="res://scripts/HUD.gd" id="1_byobm"]
 [ext_resource type="PackedScene" uid="uid://dy66au3qnoyoo" path="res://World/map.tscn" id="2_8y3be"]
@@ -11,10 +11,21 @@
 properties/0/path = NodePath("ip:text")
 properties/0/spawn = true
 properties/0/replication_mode = 1
+properties/1/path = NodePath("MultiplayerSpawner:spawn_limit")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath("MultiplayerSpawner:_spawnable_scene_count")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+properties/3/path = NodePath("MultiplayerSpawner:scenes/0")
+properties/3/spawn = true
+properties/3/replication_mode = 1
 
 [node name="Testos" type="Node2D" node_paths=PackedStringArray("world")]
 script = ExtResource("1_byobm")
 world = NodePath("Map")
+metadata/_edit_horizontal_guides_ = [231.0]
+metadata/_edit_vertical_guides_ = [320.0]
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
 _spawnable_scenes = PackedStringArray("res://scenes/player.tscn")
