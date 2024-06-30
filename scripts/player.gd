@@ -15,6 +15,7 @@ extends CharacterBody2D
 @export var gravity : int = 600
 var jump_timer : float = 0
 @export var is_alive : bool = true
+var facing : int = 1
 
 var init_pos : Vector2
 
@@ -26,21 +27,18 @@ func _ready():
 		camera.make_current()
 	#init_pos = position
 	if name == "1":
-		position = Vector2(100, 100)
+		position = Vector2(32, 32)
 	else:
-		position = Vector2(200, 520)
+		position = Vector2(32, 320)
 	pass
 
 func _physics_process(delta):
 	if is_multiplayer_authority():
-		#velocity = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down") * 100
-		if is_alive:
-			var direction = get_horizontal_input()
-			handle_movement(direction, delta)
-			handle_jump(delta)
-			update_animation(direction)
-		handle_gravity(delta)
-
+		var direction = get_horizontal_input()
+		handle_movement(direction, delta)
+		handle_jump(delta)
+		update_animation(direction)
+	handle_gravity(delta)
 	move_and_slide()
 
 func handle_movement(direction, delta):
@@ -53,8 +51,10 @@ func get_horizontal_input() -> int:
 	var left = Input.is_action_pressed("Left")
 	var right = Input.is_action_pressed("Right")
 	if left && !right:
+		facing = -1
 		return -1
 	elif right && !left:
+		facing = 1
 		return 1
 	else:
 		return 0
@@ -69,7 +69,6 @@ func handle_jump(delta):
 	if Input.is_action_just_pressed("Jump") && is_on_floor():
 		velocity.y = jump_force
 		jump_timer = 0
-	
 	if Input.is_action_pressed("Jump") && jump_timer < jump_hold_time:
 		jump_timer += delta
 	else:
@@ -78,7 +77,6 @@ func handle_jump(delta):
 func update_animation(direction):
 	if direction:
 		animated_sprite_2d.flip_h = direction < 0
-	
 	if is_on_floor():
 		if direction:
 			if animated_sprite_2d.animation != "run":
