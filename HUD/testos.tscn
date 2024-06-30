@@ -1,10 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bdbm4lmy56tu0"]
+[gd_scene load_steps=7 format=3 uid="uid://bdbm4lmy56tu0"]
 
 [ext_resource type="Script" path="res://scripts/HUD.gd" id="1_byobm"]
 [ext_resource type="PackedScene" uid="uid://dy66au3qnoyoo" path="res://World/map.tscn" id="2_8y3be"]
 [ext_resource type="Script" path="res://HUD/MainMenu.gd" id="2_bgkf4"]
 [ext_resource type="Texture2D" uid="uid://b78sce7ef38mt" path="res://assets/menu/logo-white.png" id="3_aulo8"]
-[ext_resource type="PackedScene" uid="uid://dusf4tniph0y1" path="res://scenes/torch.tscn" id="6_5858h"]
 [ext_resource type="AudioStream" uid="uid://g10ismm860lv" path="res://assets/menu/sound/jo-menu-sound.mp3" id="6_edj36"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_s07cx"]
@@ -87,8 +86,5 @@ replication_config = SubResource("SceneReplicationConfig_s07cx")
 [node name="jo-ambiance-sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_edj36")
 autoplay = true
-
-[node name="Torch" parent="." instance=ExtResource("6_5858h")]
-position = Vector2(155, 695)
 
 [connection signal="pressed" from="MainMenu/stop-sound" to="MainMenu" method="_on_stop_sound_pressed"]

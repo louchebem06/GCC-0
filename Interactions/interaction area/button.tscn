@@ -7,12 +7,14 @@
 size = Vector2(14, 14.5)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i1eww"]
-radius = 25.2982
+radius = 16.0
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_tcrbq")
 
 [node name="button" type="StaticBody2D" parent="."]
+collision_layer = 0
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="button"]
 position = Vector2(0, 0.25)

@@ -24,19 +24,22 @@ func _process(delta):
 		hover_offset += hover_speed * delta
 		var hover = sin(hover_offset) * hover_amplitude
 		if player && player.is_alive:
-			postorch = player.position + Vector2(0, -30 + hover)
-			position = postorch
+			position = player.position + Vector2(0, -30 + hover)
+			print("torch pos :", position)
+		else:
+			position = Vector2(0, -30 + hover)
+			print("torch pos :", position)
 #		else:
 #			position = postorch + Vector2(0, 30 + hover)
 		
-		if Input.is_action_just_pressed("Drop"):
+		if player && Input.is_action_just_pressed("Drop"):
 			is_held = false
 			is_thrown = true
 			var direction = player.facing
+			collision_shape_2d.disabled = false
 			player = null
 			throw_velocity = Vector2(direction * throw_speed, -throw_speed / 2)
 			falling = 600.0
-			collision_shape_2d.disabled = false
 
 	if is_thrown:
 		throw_velocity.y += falling * delta
