@@ -33,7 +33,7 @@ polygon = PackedVector2Array(664, 720, 664, 728, 688, 728, 688, 720, 672, 720)
 
 [node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="border"]
 position = Vector2(96, 16)
-polygon = PackedVector2Array(664, 720, 664, 728, 688, 728, 688, 720)
+polygon = PackedVector2Array(656, 720, 656, 728, 688, 728, 688, 720)
 
 [node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="border"]
 position = Vector2(136, 8)
@@ -116,12 +116,70 @@ Trap = NodePath("../Trap")
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_75vvq")
 
-[node name="Torch" parent="." instance=ExtResource("4_gu6tl")]
-position = Vector2(344, 520)
-
 [node name="button2" parent="." node_paths=PackedStringArray("Trap") instance=ExtResource("3_jmjr4")]
-position = Vector2(60, 535)
+position = Vector2(768, 544)
 Trap = NodePath("../Trap2")
 
 [node name="Trap2" parent="." instance=ExtResource("2_n2nbf")]
-position = Vector2(37, 544)
+position = Vector2(768, 728)
+
+[node name="Torch" parent="." instance=ExtResource("4_gu6tl")]
+position = Vector2(216, 664)
+
+[node name="button3" parent="." node_paths=PackedStringArray("Trap", "Trap2", "Trap3") instance=ExtResource("3_jmjr4")]
+position = Vector2(1104, 544)
+Trap = NodePath("../Trap3")
+Trap2 = NodePath("../Trap3/Trap2")
+Trap3 = NodePath("../Trap3/Trap2/Trap2")
+
+[node name="Trap3" parent="." instance=ExtResource("2_n2nbf")]
+position = Vector2(1104, 712)
+
+[node name="Trap2" parent="Trap3" instance=ExtResource("2_n2nbf")]
+position = Vector2(32, 0)
+
+[node name="Trap2" parent="Trap3/Trap2" instance=ExtResource("2_n2nbf")]
+position = Vector2(-64, 0)
+
+[node name="button4" parent="." node_paths=PackedStringArray("Trap", "Trap2", "Trap3") instance=ExtResource("3_jmjr4")]
+position = Vector2(1408, 544)
+Trap = NodePath("../Trap4")
+Trap2 = NodePath("../Trap9")
+Trap3 = NodePath("../Trap10")
+
+[node name="Trap4" parent="." instance=ExtResource("2_n2nbf")]
+position = Vector2(1408, 672)
+
+[node name="Trap5" parent="." instance=ExtResource("2_n2nbf")]
+position = Vector2(1744, 664)
+
+[node name="Node2D" parent="." node_paths=PackedStringArray("Trap") instance=ExtResource("3_jmjr4")]
+position = Vector2(1744, 544)
+Trap = NodePath("../Trap5")
+
+[node name="Node2D2" parent="." node_paths=PackedStringArray("Trap") instance=ExtResource("3_jmjr4")]
+position = Vector2(2066, 544)
+Trap = NodePath("../Trap6")
+
+[node name="Trap6" parent="." instance=ExtResource("2_n2nbf")]
+position = Vector2(2068, 632)
+
+[node name="Trap7" parent="." instance=ExtResource("2_n2nbf")]
+position = Vector2(2344, 584)
+
+[node name="Node2D3" parent="." node_paths=PackedStringArray("Trap") instance=ExtResource("3_jmjr4")]
+position = Vector2(2341, 544)
+Trap = NodePath("../Trap7")
+
+[node name="Trap8" parent="." instance=ExtResource("2_n2nbf")]
+position = Vector2(2568, 664)
+
+[node name="Node2D4" parent="." node_paths=PackedStringArray("Trap") instance=ExtResource("3_jmjr4")]
+position = Vector2(2566, 544)
+Trap = NodePath("../Trap8")
+
+[node name="Trap9" parent="." instance=ExtResource("2_n2nbf")]
+position = Vector2(1360, 696)
+
+[node name="Trap10" parent="." instance=ExtResource("2_n2nbf")]
+position = Vector2(1456, 695)
