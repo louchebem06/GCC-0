@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dg522hy2gl5x4"]
+[gd_scene load_steps=5 format=3 uid="uid://dg522hy2gl5x4"]
 
-[ext_resource type="PackedScene" uid="uid://cm46vcorm63qv" path="res://scenes/spike.tscn" id="2_fns4c"]
+[ext_resource type="PackedScene" uid="uid://cm46vcorm63qv" path="res://scenes/Trap.tscn" id="3_estrh"]
 [ext_resource type="PackedScene" uid="uid://c1ycsuc24bnxv" path="res://scenes/player.tscn" id="3_w24n0"]
-[ext_resource type="PackedScene" uid="uid://c0h7228utwprk" path="res://scenes/flame_trap.tscn" id="4_07af4"]
-[ext_resource type="PackedScene" uid="uid://bfk4ywfm4b7sc" path="res://Interactions/interaction area/spike_button.tscn" id="4_purch"]
+[ext_resource type="PackedScene" uid="uid://bfk4ywfm4b7sc" path="res://Interactions/interaction area/button.tscn" id="4_purch"]
 
 [sub_resource type="GDScript" id="GDScript_o7eik"]
 script/source = "extends StaticBody2D
@@ -28,15 +27,12 @@ polygon = PackedVector2Array(0, 0, 0, 160, 2432, 160, 2432, 176, 0, 176, 0, 768,
 
 [node name="Polygon2D" type="Polygon2D" parent="border/CollisionPolygon2D"]
 
-[node name="Spike" parent="." instance=ExtResource("2_fns4c")]
-position = Vector2(568, 760)
-
-[node name="FlameTrap" parent="." instance=ExtResource("4_07af4")]
-position = Vector2(296, 752)
-
 [node name="Player" parent="." instance=ExtResource("3_w24n0")]
 position = Vector2(480, 704)
 
-[node name="spike_button" parent="." node_paths=PackedStringArray("spike") instance=ExtResource("4_purch")]
+[node name="button" parent="." node_paths=PackedStringArray("Trap") instance=ExtResource("4_purch")]
 position = Vector2(-224, -632)
-spike = NodePath("../Spike")
+Trap = NodePath("../Trap")
+
+[node name="Trap" parent="." instance=ExtResource("3_estrh")]
+position = Vector2(480, 136)
