@@ -8,18 +8,9 @@
 [ext_resource type="AudioStream" uid="uid://g10ismm860lv" path="res://assets/menu/sound/jo-menu-sound.mp3" id="6_edj36"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_s07cx"]
-properties/0/path = NodePath("MultiplayerSpawner:spawn_path")
+properties/0/path = NodePath("ip:text")
 properties/0/spawn = true
 properties/0/replication_mode = 1
-properties/1/path = NodePath("MultiplayerSpawner:spawn_limit")
-properties/1/spawn = true
-properties/1/replication_mode = 1
-properties/2/path = NodePath("MultiplayerSpawner:_spawnable_scene_count")
-properties/2/spawn = true
-properties/2/replication_mode = 1
-properties/3/path = NodePath("MultiplayerSpawner:scenes/0")
-properties/3/spawn = true
-properties/3/replication_mode = 1
 
 [node name="Testos" type="Node2D" node_paths=PackedStringArray("world")]
 script = ExtResource("1_byobm")
@@ -113,6 +104,13 @@ autoplay = true
 
 [node name="Torch" parent="." instance=ExtResource("6_5858h")]
 position = Vector2(155, 695)
+
+[node name="ip" type="Label" parent="."]
+offset_left = 99.0
+offset_top = 470.0
+offset_right = 222.0
+offset_bottom = 493.0
+text = "IP"
 
 [connection signal="pressed" from="MainMenu/stop-sound" to="MainMenu" method="_on_stop_sound_pressed"]
 [connection signal="pressed" from="MainMenu/quit-button" to="." method="_on_quitbutton_pressed"]
